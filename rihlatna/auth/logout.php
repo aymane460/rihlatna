@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-// Unset all session variables
 $_SESSION = array();
 
-// If it's desired to kill the session, also delete the session cookie
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
@@ -15,10 +13,8 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Finally, destroy the session
 session_destroy();
 
-// Redirect to home page with logout message
 $_SESSION['logout_success'] = "You have been successfully logged out.";
 header("Location: ../pages/home.php");
 exit();

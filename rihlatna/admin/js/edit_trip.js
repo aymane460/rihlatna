@@ -1,10 +1,9 @@
-// Prevent form resubmission on page refresh
+
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Date validation
     const startDateInput = document.getElementById('startDate');
     const endDateInput = document.getElementById('endDate');
     
