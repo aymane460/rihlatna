@@ -1,0 +1,169 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.reservation-card {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.trip-image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.reservation-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.trip-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.reservation-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-pending { 
+    background: #fff3cd; 
+    color: #856404; 
+}
+.status-confirmed { 
+    background: #d4edda; 
+    color: #155724; 
+}
+.status-cancelled { 
+    background: #f8d7da; 
+    color: #721c24; 
+}
+
+.reservation-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.detail-group label {
+    display: block;
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.detail-group p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.pending-notice {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border-left: 4px solid #ffc107;
+}
+
+.pending-notice p {
+    margin: 0;
+    color: #856404;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.reservation-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-edit {
+    background: #17a2b8;
+    color: white;
+}
+
+.btn-edit:hover { 
+    background: #138496; 
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover { 
+    background: #c82333; 
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.alert-success { 
+    background: #d4edda; 
+    color: #155724; 
+}
+
+.alert-error { 
+    background: #f8d7da; 
+    color: #721c24; 
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.empty-state p {
+    font-size: 18px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.btn-browse {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-browse:hover { 
+    background: #218838; 
+}

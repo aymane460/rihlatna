@@ -1,0 +1,124 @@
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #2c3e50;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar-header {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar-menu li a:hover {
+    background: #34495e;
+    color: white;
+}
+
+.sidebar-menu li a .sidebar-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.sidebar-menu li a span {
+    font-size: 0.9rem;
+}
+
+
+.has-submenu > a {
+    justify-content: space-between;
+}
+
+.toggle-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 15px;
+    background: rgba(0,0,0,0.1);
+    margin: 0;
+}
+
+.submenu li a {
+    padding: 10px 20px 10px 45px !important;
+    font-size: 0.85rem;
+}
+
+.submenu li a .sidebar-icon {
+    width: 16px;
+    height: 16px;
+}
+
+
+.submenu.active {
+    display: block;
+}
+
+.sidebar-footer {
+    position: absolute;
+
+    width: 100%;
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.sidebar-footer a:hover {
+    color: white;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}

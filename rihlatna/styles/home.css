@@ -1,0 +1,465 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+#header_image {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#header_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#trips {
+    background: linear-gradient(135deg, #9FD3C3 0%, #7BC5AE 100%);
+    min-height: 100vh;
+    width: 100%;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.filter-bar {
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    width: fit-content;
+    margin: 0 auto 40px auto;
+    gap: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.custom-multiselect {
+    position: relative;
+    min-width: 180px;
+    margin-right: 10px;
+    z-index: 999;
+}
+
+.select-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #333;
+    user-select: none;
+}
+
+.select-box:hover {
+    background-color: #f8f9fa;
+}
+
+.arrow-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(20%);
+}
+
+.select-box.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.checkboxes {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9999;
+    margin-top: 8px;
+}
+
+.checkboxes.show {
+    display: block;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.checkboxes label:last-child {
+    border-bottom: none;
+}
+
+.checkboxes label:hover {
+    background-color: #f8f9fa;
+}
+
+.checkboxes input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #1C9983;
+    transform: scale(1.1);
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #1C9983 0%, #148A73 100%);
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(28, 153, 131, 0.3);
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(28, 153, 131, 0.4);
+}
+
+.search-btn img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+}
+
+.trips-wrapper {
+    position: relative;
+    padding: 20px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.scroll-controls {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.scroll-btn {
+    width: 40px;
+    height: 40px;
+    border: solid rgb(139, 139, 139) 1px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    color: #1C9983;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.scroll-btn img {
+    height: 15px;
+}
+
+.scroll-btn:hover {
+    background: #1C9983;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(28, 153, 131, 0.3);
+}
+
+.trips-container {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.trips-container::-webkit-scrollbar {
+    display: none;
+}
+
+.trip-card {
+    min-width: 280px;
+    max-width: 320px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+
+.trip-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+
+.trip-card h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 20px 20px 15px 20px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.trip-card p {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 20px;
+    line-height: 1.5;
+}
+
+.trip-card .location_icon,
+.trip-card .clock_icon,
+.trip-card .money_icon,
+.trip-card .calendar_icon {
+    margin-right: 8px;
+    filter: brightness(0) saturate(100%) invert(55%) sepia(73%) saturate(434%) hue-rotate(129deg) brightness(91%) contrast(91%);
+}
+
+.trip-card .location_icon {
+    width: 16px;
+    height: 21px;
+}
+
+.trip-card .clock_icon {
+    width: 16px;
+    height: 16px;
+}
+
+.trip-card .money_icon {
+    width: 18px;
+    height: 16px;
+}
+
+.trip-card .calendar_icon {
+    width: 16px;
+    height: 18px;
+}
+
+.details-btn {
+    display: inline-block;
+    width: calc(100% - 40px);
+    margin: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #1C9983 0%, #148A73 100%);
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.details-btn:hover {
+    background: linear-gradient(135deg, #148A73 0%, #0F6B5A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(28, 153, 131, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 1.3em;
+    font-weight: 500;
+    background: white;
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+    .trips-wrapper {
+        padding: 20px 10px;
+    }
+    
+    .scroll-controls {
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #header_image {
+        height: 250px;
+    }
+    
+    #trips {
+        padding: 30px 15px;
+    }
+    
+    .filter-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    .custom-multiselect {
+        width: 100%;
+        margin-right: 0;
+        min-width: auto;
+    }
+    
+    .search-btn,
+    .reset-btn {
+        width: 100%;
+        border-radius: 12px;
+        padding: 12px;
+    }
+    
+    .search-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .trips-container {
+        gap: 15px;
+        padding: 15px 0;
+    }
+    
+    .trip-card {
+        min-width: 260px;
+        max-width: 280px;
+    }
+    
+    .scroll-controls {
+        position: static;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .no-results {
+        margin: 20px 10px;
+        padding: 40px 20px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .trip-card {
+        min-width: 240px;
+        max-width: 260px;
+    }
+    
+    .trip-card h3 {
+        font-size: 1.2em;
+        margin: 15px 15px 12px 15px;
+    }
+    
+    .trip-card p {
+        margin: 8px 15px;
+        font-size: 13px;
+    }
+    
+    .details-btn {
+        margin: 15px;
+        width: calc(100% - 30px);
+        padding: 10px 15px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.search-btn:focus,
+.reset-btn:focus,
+.details-btn:focus,
+.select-box:focus {
+    outline: 2px solid #1C9983;
+    outline-offset: 2px;
+}
+
+
+.checkboxes::-webkit-scrollbar {
+    width: 6px;
+}
+
+.checkboxes::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.checkboxes::-webkit-scrollbar-thumb {
+    background: #1C9983;
+    border-radius: 10px;
+}
+
+.checkboxes::-webkit-scrollbar-thumb:hover {
+    background: #148A73;
+}

@@ -1,0 +1,110 @@
+ *{
+     font-family: Arial, sans-serif;
+ }
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.day-section {
+   
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #f5f6f7;
+}
+
+.activities-container {
+    margin-left: 20px;
+    margin-top: 15px;
+    
+}
+
+.activity {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    width: 50%;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+.add-activity, .remove-activity, #addDay, .remove-day {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.add-activity, #addDay {
+    background: #4CAF50;
+    color: white;
+}
+
+.remove-activity, .remove-day {
+    background: #f44336;
+    color: white;
+}
+
+button[type="submit"] {
+    background: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background: #0b7dda;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+#addDay {
+    margin-bottom: 20px;
+}
