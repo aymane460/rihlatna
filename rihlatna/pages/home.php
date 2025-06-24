@@ -153,11 +153,10 @@ include '../includes/header.php';
    </div>
 </main>
 
+
 <script src="../js/home.js">
 
 </script>
-
-
 
 <?php
 include '../includes/footer.php';

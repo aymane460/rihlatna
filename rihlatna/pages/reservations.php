@@ -43,7 +43,6 @@ include '../includes/header.php';
 ?>
     
 <div class="container">
-    <h1>My Reservations</h1>
     
     <?php if ($message): ?>
         <div class="alert alert-<?= $message_type ?>">
@@ -54,7 +53,7 @@ include '../includes/header.php';
     <?php if (empty($reservations)): ?>
         <div class="empty-state">
             <p>You don't have any reservations yet.</p>
-            <a href="trips.php" class="btn-browse">Browse Available Trips</a>
+            <a href="home.php" class="btn-browse">Browse Available Trips</a>
         </div>
     <?php else: ?>
         <?php foreach ($reservations as $reservation): ?>
