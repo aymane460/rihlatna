@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2025 at 10:05 AM
+-- Generation Time: Jun 25, 2025 at 12:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -50,7 +50,9 @@ CREATE TABLE `reservations` (
 
 INSERT INTO `reservations` (`reservation_id`, `gender`, `first_name`, `last_name`, `birthday`, `cin`, `city`, `phone`, `email`, `first_experience`, `user_id`, `trip_id`, `status`, `reservation_date`) VALUES
 (1, 'male', 'aymane', 'elafia', '2025-06-21', 'k45325', 'tanger', '212769865432', 'aymaneelafia.solicode@gmail.com', 1, 7, 22, 'confirmed', '2025-06-21 18:29:50'),
-(2, 'male', 'aymane', 'el', '2025-06-16', 'AB945325', 'tanger', '0676432190', 'aymaneelafia.solicode@gmail.com', 1, 7, 10, 'pending', '2025-06-22 15:51:27');
+(2, 'male', 'aymane', 'el afia', '2025-06-16', 'AB945325', 'tanger', '0676432180', 'aymaneelafia.solicode@gmail.com', 1, 7, 10, 'pending', '2025-06-22 15:51:27'),
+(4, 'male', 'amine', 'elafia', '2009-02-01', 'KB945325', 'tanger', '0769865432', 'amine@gmail.com', 1, 21, 19, 'cancelled', '2025-06-24 23:19:15'),
+(5, 'male', 'aymane', 'el afia', '2025-06-25', 'KB745378', 'tanger', '0665465432', 'amine@gmail.com', 1, 21, 9, 'pending', '2025-06-25 09:34:42');
 
 -- --------------------------------------------------------
 
@@ -72,10 +74,10 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`review_id`, `rating_value`, `comment`, `review_date`, `user_id`, `trip_id`) VALUES
-(5, 5, 'hhhhhhhhhhhhhhhhhhhhhhhh', '2025-06-22', 7, 22),
-(6, 4, 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', '2025-06-22', 20, 22),
 (7, 3, 'good', '2025-06-22', 20, 9),
-(8, 4, 'good', '2025-06-22', 7, 10);
+(8, 4, 'good', '2025-06-22', 7, 10),
+(9, 5, 'nice trip', '2025-06-25', 21, 19),
+(10, 5, 'wanderful experience', '2025-06-25', 21, 9);
 
 -- --------------------------------------------------------
 
@@ -361,7 +363,8 @@ INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, 
 (15, 'aymane', 'elafia', 'ayma@gmail.com', '$2y$10$rWwHLETX3tsc.AXGrZmvjeV9bwJfjFVsThLcxwYmtKX7zyHDRKx3m', '128', 'admin'),
 (16, 'aymane', 'elafia', 'aym@gmail.com', '$2y$10$XVvuargZwn1t87WQ7ie/POccx4sTKUokIw8mbiY2e/VnuJqWHvkMi', '654', 'supervisor'),
 (18, 'aymane', 'elafia', 'a@gmail.com', '$2y$10$rI5asCvb48AXmMM2oTpSDuV4xQ2IwkFxJwMkuhZ6qoghu9Yhu65/C', '54321', 'admin'),
-(20, 'aymane', 'elafia', 'ayman@gmail.com', '$2y$10$XEVyuidjoAf5nNtPxBK3Ku5.brHJPzv44wipdWqYriT.kOETLPTjC', '99', 'customer');
+(20, 'aymane', 'elafia', 'ayman@gmail.com', '$2y$10$XEVyuidjoAf5nNtPxBK3Ku5.brHJPzv44wipdWqYriT.kOETLPTjC', '99', 'customer'),
+(21, 'amine', 'elafia', 'amine@gmail.com', '$2y$10$1H.hxcQLoJcbbyMxGN8yqu8AtZ1iKNUS9wtz3D7/05LvdkkDIgIAO', '0776432190', 'customer');
 
 --
 -- Indexes for dumped tables
@@ -428,13 +431,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `trips`
@@ -464,7 +467,7 @@ ALTER TABLE `trip_days`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables

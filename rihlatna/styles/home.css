@@ -45,7 +45,7 @@ body {
     width: fit-content;
     margin: 0 auto 40px auto;
     gap: 20px;
-    box-shadow: 0 1px 5px #1C9983;
+    box-shadow: 3 1px 1px #000000;
     border: 1px solid rgba(130, 130, 130, 0.3);
     backdrop-filter: blur(10px);
     flex-wrap: wrap;
@@ -237,7 +237,7 @@ body {
 
 .trip-card {
     min-width: 280px;
-    max-width: 320px;
+    
     background: white;
     border-radius: 20px;
     overflow: hidden;
@@ -285,7 +285,7 @@ body {
 }
 
 .trip-card .location_icon {
-    width: 16px;
+    width: 15px;
     height: 21px;
 }
 
@@ -301,7 +301,7 @@ body {
 
 .trip-card .calendar_icon {
     width: 16px;
-    height: 18px;
+    height: 19px;
 }
 
 .details-btn {
